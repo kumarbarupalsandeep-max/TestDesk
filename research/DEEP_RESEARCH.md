@@ -68,3 +68,29 @@ Risks: duplicate cases, stale requirements, flaky tests misclassified as product
 
 ## 12. Next work
 Create a current feature/plan matrix for TestRail, Zephyr and Xray; validate import formats and API limits from official docs; write user stories for traceability, result ingestion and release gates.
+
+## 15. Deep research addendum — evidence and product decisions
+
+### Market evidence
+TestRail documents test case/suite management and test-run execution as central workflows. Playwright positions its test framework around end-to-end testing, browser projects, assertions, isolation, parallelization, reports, and trace-based debugging. These represent adjacent but different layers: test management organizes intent and evidence; automation executes checks. Sources: [TestRail introduction](https://support.testrail.com/hc/en-us/articles/7076810203028-Introduction-to-TestRail), [Playwright docs](https://playwright.dev/docs/intro), [Playwright projects](https://playwright.dev/docs/test-projects), [Trace Viewer](https://playwright.dev/docs/trace-viewer).
+
+### Competitive implications
+TestDesk should connect manual test planning with automated run evidence rather than positioning itself as only a test-case spreadsheet or another browser runner. A differentiated opportunity is traceability from requirement → test case → run → defect → release decision, with clear separation between automated evidence and human sign-off.
+
+### Recommended core workflows
+1. Import requirements or link work items; version acceptance criteria.
+2. Organize reusable test cases, suites, parameters, preconditions, and expected results.
+3. Plan test runs by release, environment, browser/device, build, and risk.
+4. Ingest automation results through a documented API or JUnit-compatible report format.
+5. Attach screenshots, logs, trace artifacts, environment metadata, and defect links.
+6. Show flaky tests separately from consistently failing tests and require an owner for quarantine.
+7. Produce release-readiness reports based on explicit policy, not an unexplained green badge.
+
+### Data, quality, and security
+Model Requirement, TestCase, TestVersion, TestPlan, TestRun, TestResult, Environment, Artifact, DefectLink, and ReleaseGate. Keep result history immutable; edits to a test case should not rewrite historical evidence. Sanitize uploaded artifacts, limit retention, redact credentials/PII, and restrict access to production test data.
+
+### Validation and success measures
+Measure requirement coverage, execution completion, defect escape rate, flaky-test rate, mean triage time, automation ingestion reliability, and release-gate override rate. Validate integrations with the team’s actual CI stack before adding many test frameworks.
+
+### Sources and caveats
+Official documentation confirms core workflows, not the relative market share or pricing of vendors. Any competitive pricing matrix should be verified against current vendor pages and timestamped.

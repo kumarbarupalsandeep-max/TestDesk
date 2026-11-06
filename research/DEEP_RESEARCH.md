@@ -90,3 +90,45 @@ Har release ke liye simple “quality story”: kya test hua, kya fail hua, kaun
 
 **Note:** Tools ke features aur prices time ke saath badal sakte hain; current details vendor se verify karein.
 
+
+
+## 14. Competitor reference research — TestRail aur BrowserStack
+
+### Reference URLs
+- TestRail: https://www.testrail.com/
+- TestRail platform: https://www.testrail.com/platform/
+- BrowserStack: https://www.browserstack.com/
+- BrowserStack docs: https://www.browserstack.com/docs/
+
+### TestRail se kya samajh aata hai?
+TestRail test cases, test plans, test runs, step-wise results, attachments, traceability aur centralized reporting ko organize karta hai. Test results ko requirements aur defects se link karna release risk samajhne mein useful hai. API, CLI aur webhooks automation pipelines se results connect karne ke options dete hain.
+
+### BrowserStack se kya samajh aata hai?
+BrowserStack browser aur real mobile device environments par manual aur automated testing, visual testing, accessibility checks aur test automation services provide karta hai. Isse testing environment coverage aur real-device validation ka importance samajh aata hai.
+
+### Pages / feature map
+1. QA dashboard and release quality summary
+2. Projects, milestones and builds
+3. Requirements / user stories
+4. Test case repository and reusable steps
+5. Test suites and test plans
+6. Test execution runs and step-level result
+7. Defects / bug links
+8. Browser-device-environment matrix
+9. Automation runs, logs and artifacts
+10. Visual comparison and accessibility findings
+11. Traceability and coverage reports
+12. Integrations, users, roles and audit trail
+
+### Important workflow
+Requirement ko test cases se map karein → release test plan banayein → environment select karein → manual ya automated run karein → evidence attach karein → failed result ko defect se link karein → fix ke baad retest karein → release readiness report banayein.
+
+### Original TestDesk direction
+TestRail jaisi traceability aur BrowserStack jaisi environment coverage se learning lein. TestDesk ka differentiator ek clear “release evidence timeline” ho: build, environment, test run, failure, linked defect, retest aur approval ka chronological record.
+
+### Design / implementation cautions
+- Test management aur test execution engine alag capabilities hain.
+- Pass rate ko akela quality score na banayein; coverage, flaky tests aur unresolved severity bhi dikhayein.
+- Test artifacts mein secrets/personal data ho sakta hai; redact and access-control karein.
+- Automation result import idempotent ho aur original run metadata preserve kare.
+
